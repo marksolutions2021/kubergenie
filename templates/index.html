@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KuberGenie Dashboard</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 40px;
+        }
+        input[type="text"], button {
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+        input[type="text"] {
+            width: 250px;
+            background: #333;
+            color: white;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004c99;
+        }
+        .result {
+            margin-top: 30px;
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            display: inline-block;
+            max-width: 90%;
+            white-space: pre-wrap;
+        }
+        a button {
+            background-color: #009933;
+        }
+        a button:hover {
+            background-color: #006622;
+        }
+        @media (max-width: 600px) {
+            input[type="text"], button {
+                width: 90%;
+                margin: 8px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔮 KuberGenie Web Dashboard</h1>
+
+    <form action="/analyze" method="post">
+        <input type="text" name="symbol" placeholder="Enter Stock Symbol" required>
+        <button type="submit">📊 Analyze</button>
+    </form>
+
+    <form action="/run_pipeline" method="post">
+        <button>🔮 Run Full Genie Pipeline</button>
+    </form>
+
+    <form id="chartForm" method="get">
+    <input type="text" id="stockInput" placeholder="Enter Stock for Accuracy Chart" required>
+    <button type="button" onclick="goToChart()">🎯 View Accuracy Chart</button>
+</form>
+
+<script>
+    function goToChart() {
+        const stock = document.getElementById("stockInput").value.trim().toUpperCase();
+        if (stock) {
+            window.location.href = "/accuracy_chart/" + stock;
+        } else {
+            alert("Please enter a stock symbol.");
+        }
+    }
+</script>
+
+    <a href="/leaderboard"><button type="button">🏆 Genie Leaderboard</button></a>
+
+    {% if result %}
+    <div class="result">{{ result }}</div>
+    {% endif %}
+
+</body>
+</html>

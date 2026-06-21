@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🏆 KuberGenie Leaderboard</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+        h1 {
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 95%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+        th {
+            background: #262626;
+            color: #ffcc00;
+            font-size: 18px;
+        }
+        tr:hover {
+            background-color: #333333;
+        }
+        .back-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            background-color: #009933;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            background-color: #006622;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🏆 Genie Leaderboard</h1>
+
+    {% if leaderboard %}
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Signal</th>
+            <th>Confidence (%)</th>
+            <th>RSI</th>
+            <th>MACD</th>
+            <th>Pattern</th>
+            <th>Insider</th>
+            <th>News</th>
+            <th>Risks</th>
+        </tr>
+        {% for entry in leaderboard %}
+        <tr>
+            <td>{{ entry.get('ticker', 'N/A') }}</td>
+            <td>{{ entry.get('signal', 'N/A') }}</td>
+            <td>{{ entry.get('confidence', 'N/A') }}</td>
+            <td>{{ entry.get('indicators', {}).get('RSI', 'N/A') }}</td>
+            <td>{{ entry.get('indicators', {}).get('MACD', 'N/A') }}</td>
+            <td>{{ entry.get('indicators', {}).get('Pattern', 'N/A') }}</td>
+            <td>{{ entry.get('indicators', {}).get('Insider', 'N/A') }}</td>
+            <td>{{ entry.get('indicators', {}).get('News', 'N/A') }}</td>
+            <td>{{ entry.get('risks', 'N/A') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No data in the leaderboard yet.</p>
+    {% endif %}
+
+    <a class="back-btn" href="/">🔙 Back to Dashboard</a>
+
+</body>
+</html>

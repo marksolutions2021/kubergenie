@@ -1,0 +1,5 @@
+setup.py
+kubergenie.egg-info/PKG-INFO
+kubergenie.egg-info/SOURCES.txt
+kubergenie.egg-info/dependency_links.txt
+kubergenie.egg-info/top_level.txt

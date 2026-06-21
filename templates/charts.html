@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 Accuracy Chart for {{ stock }}</title>
+</head>
+<body>
+    <h1>📊 Accuracy Chart for {{ stock }}</h1>
+
+    {% if chart_file %}
+        <img src="/static/charts/{{ chart_file }}" alt="Accuracy Chart" style="max-width:100%; height:auto;">
+    {% else %}
+        <p>No chart available.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="/">🔙 Back to Dashboard</a>
+</body>
+</html>
