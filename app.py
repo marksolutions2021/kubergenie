@@ -18,6 +18,10 @@ CSV_PATH = "kubergenie/signals/GenieSignals.csv"
 def index():
     return render_template('index.html')
 
+# ✅ Test route
+@app.route('/test')
+def test():
+    return "KuberGenie Test OK"
 
 # ✅ Web Form Analyze (Manual Single Stock Input)
 @app.route('/analyze', methods=['POST'])
