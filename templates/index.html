@@ -1,97 +1,212 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>KuberGenie Dashboard</title>
+    <title>KuberGenie AI Dashboard</title>
+
     <style>
-        body {
-            background: #0f0f0f;
-            color: #f0f0f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 30px;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
-        h1 {
-            color: #ffcc00;
-            margin-bottom: 40px;
+
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Segoe UI,sans-serif;
         }
-        input[type="text"], button {
-            padding: 12px 20px;
-            margin: 10px;
-            border-radius: 8px;
-            border: none;
-            font-size: 16px;
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+            padding:40px 0;
         }
-        input[type="text"] {
-            width: 250px;
-            background: #333;
-            color: white;
+
+        h1{
+            text-align:center;
+            font-size:48px;
+            color:#fbbf24;
+            margin-bottom:10px;
         }
-        button {
-            background-color: #0066cc;
-            color: white;
-            cursor: pointer;
+
+        .subtitle{
+            text-align:center;
+            color:#94a3b8;
+            margin-bottom:50px;
         }
-        button:hover {
-            background-color: #004c99;
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+            gap:25px;
         }
-        .result {
-            margin-top: 30px;
-            background: #1a1a1a;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: left;
-            display: inline-block;
-            max-width: 90%;
-            white-space: pre-wrap;
+
+        .card{
+            background:#1e293b;
+            border-radius:20px;
+            padding:30px;
+            box-shadow:0 0 20px rgba(0,0,0,.3);
+            transition:.3s;
         }
-        a button {
-            background-color: #009933;
+
+        .card:hover{
+            transform:translateY(-5px);
         }
-        a button:hover {
-            background-color: #006622;
+
+        h2{
+            color:#fbbf24;
+            margin-bottom:20px;
         }
-        @media (max-width: 600px) {
-            input[type="text"], button {
-                width: 90%;
-                margin: 8px auto;
+
+        input{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#334155;
+            color:white;
+            margin-bottom:15px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#10b981;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        button:hover{
+            background:#059669;
+        }
+
+        .leaderboard-btn{
+            background:#2563eb;
+        }
+
+        .leaderboard-btn:hover{
+            background:#1d4ed8;
+        }
+
+        .result{
+            margin-top:40px;
+            background:#1e293b;
+            padding:25px;
+            border-radius:20px;
+            white-space:pre-wrap;
+            line-height:1.8;
+        }
+
+        @media(max-width:768px){
+            h1{
+                font-size:34px;
             }
         }
+
     </style>
 </head>
 <body>
 
-    <h1>🔮 KuberGenie Web Dashboard</h1>
+<div class="container">
 
-    <form action="/analyze" method="post">
-        <input type="text" name="symbol" placeholder="Enter Stock Symbol" required>
-        <button type="submit">📊 Analyze</button>
-    </form>
+<h1>🔮 KuberGenie AI</h1>
 
-    <form action="/run_pipeline" method="post">
-        <button>🔮 Run Full Genie Pipeline</button>
-    </form>
+<div class="subtitle">
+AI-Powered Stock Intelligence Dashboard
+</div>
 
-    <form id="chartForm" method="get">
-    <input type="text" id="stockInput" placeholder="Enter Stock for Accuracy Chart" required>
-    <button type="button" onclick="goToChart()">🎯 View Accuracy Chart</button>
+<div class="grid">
+
+<div class="card">
+
+<h2>📈 Analyze Stock</h2>
+
+<form action="/analyze" method="post">
+
+<input type="text"
+name="symbol"
+placeholder="WIPRO.NS"
+required>
+
+<button type="submit">
+Analyze Now
+</button>
+
 </form>
 
+</div>
+
+<div class="card">
+
+<h2>🔮 Run Full Pipeline</h2>
+
+<form action="/run_pipeline" method="post">
+
+<button>
+Run Genie Pipeline
+</button>
+
+</form>
+
+</div>
+
+<div class="card">
+
+<h2>🎯 Accuracy Chart</h2>
+
+<input type="text"
+id="stockInput"
+placeholder="WIPRO.NS">
+
+<button onclick="goToChart()">
+View Chart
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🏆 Leaderboard</h2>
+
+<a href="/leaderboard">
+
+<button class="leaderboard-btn">
+Open Leaderboard
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+{% if result %}
+<div class="result">
+{{ result }}
+</div>
+{% endif %}
+
+</div>
+
 <script>
-    function goToChart() {
-        const stock = document.getElementById("stockInput").value.trim().toUpperCase();
-        if (stock) {
-            window.location.href = "/accuracy_chart/" + stock;
-        } else {
-            alert("Please enter a stock symbol.");
-        }
+
+function goToChart()
+{
+    let stock=document.getElementById("stockInput").value.toUpperCase();
+
+    if(stock)
+    {
+        window.location.href="/accuracy_chart/"+stock;
     }
+}
+
 </script>
-
-    <a href="/leaderboard"><button type="button">🏆 Genie Leaderboard</button></a>
-
-    {% if result %}
-    <div class="result">{{ result }}</div>
-    {% endif %}
 
 </body>
 </html>

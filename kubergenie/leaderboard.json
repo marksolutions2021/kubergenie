@@ -1,25 +1,11 @@
 [
     {
         "ticker": "WIPRO.NS",
-        "signal": "SELL",
-        "confidence": 50,
-        "indicators": {
-            "RSI": 35.92,
-            "MACD": -1.04,
-            "PatternSignal": "BullishEngulfing",
-            "SR_Breakout": "No Breakout",
-            "InsiderSentiment": 5,
-            "InsiderTag": "Insider Buying \ud83d\udcb0",
-            "NewsSentiment": -0.07107142857142858,
-            "ManagementTrustScore": 55,
-            "OptionCallVolume": 46572,
-            "OptionPutVolume": 29680,
-            "PCR": 0.64,
-            "OptionScore": 80
-        },
-        "extra": [
-            "Volatility: 0.0258"
-        ]
+        "signal": null,
+        "confidence": 0,
+        "indicators": {},
+        "risks": {},
+        "status": "Error: save_signal_report() got multiple values for argument 'output_dir'"
     },
     {
         "ticker": "WIPRO.NS",
@@ -45,24 +31,24 @@
     },
     {
         "ticker": "ITC.NS",
-        "signal": "SELL",
-        "confidence": 35,
+        "signal": "BUY",
+        "confidence": 55,
         "indicators": {
-            "RSI": 51.69,
-            "MACD": -0.42,
+            "RSI": 55.15,
+            "MACD": 1.57,
             "PatternSignal": "NoPattern",
             "SR_Breakout": "No Breakout",
             "InsiderSentiment": 0,
             "InsiderTag": "No Insider Data \u2754",
-            "NewsSentiment": 0.008333333333333337,
+            "NewsSentiment": 0.03483405483405484,
             "ManagementTrustScore": 45,
-            "OptionCallVolume": 20829,
-            "OptionPutVolume": 5240,
-            "PCR": 0.25,
+            "OptionCallVolume": 44067,
+            "OptionPutVolume": 5237,
+            "PCR": 0.12,
             "OptionScore": 80
         },
         "extra": [
-            "Volatility: 0.0069"
+            "Volatility: 0.0098"
         ]
     },
     {
