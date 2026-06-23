@@ -83,7 +83,7 @@ def export_accuracy_to_csv():
     plot_accuracy()
 
 
-def clean_genie_signals(file_path="signals/GenieSignals.csv"):
+def clean_genie_signals(file_path="kubergenie/signals/GenieSignals.csv"):
     if not os.path.exists(file_path):
         print("⚠️ GenieSignals.csv not found.")
         return
@@ -103,7 +103,7 @@ def clean_genie_signals(file_path="signals/GenieSignals.csv"):
 
 
 # ✅ FIX: Add missing update_accuracy_data function
-def update_accuracy_data(signals_file="signals/GenieSignals.csv", actual_outcome=None):
+def update_accuracy_data(signals_file="kubergenie/signals/GenieSignals.csv", actual_outcome=None):
     """Append actual outcome to GenieSignals file for accuracy tracking."""
     if not os.path.exists(signals_file):
         print(f"⚠ Signals file not found: {signals_file}")

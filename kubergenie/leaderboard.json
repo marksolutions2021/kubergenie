@@ -31,25 +31,10 @@
     },
     {
         "ticker": "ITC.NS",
-        "signal": "BUY",
-        "confidence": 55,
-        "indicators": {
-            "RSI": 55.15,
-            "MACD": 1.57,
-            "PatternSignal": "NoPattern",
-            "SR_Breakout": "No Breakout",
-            "InsiderSentiment": 0,
-            "InsiderTag": "No Insider Data \u2754",
-            "NewsSentiment": 0.03483405483405484,
-            "ManagementTrustScore": 45,
-            "OptionCallVolume": 44067,
-            "OptionPutVolume": 5237,
-            "PCR": 0.12,
-            "OptionScore": 80
-        },
-        "extra": [
-            "Volatility: 0.0098"
-        ]
+        "signal": null,
+        "confidence": null,
+        "indicators": null,
+        "extra": null
     },
     {
         "ticker": "WIPRO.NS",
@@ -267,24 +252,24 @@
     },
     {
         "ticker": "ZEEL.NS",
-        "signal": "SELL",
-        "confidence": 45,
+        "signal": "BUY",
+        "confidence": 80,
         "indicators": {
-            "RSI": 31.38,
-            "MACD": -1.38,
-            "PatternSignal": "BearishEngulfing",
+            "RSI": 66.11,
+            "MACD": 0.48,
+            "PatternSignal": "NoPattern",
             "SR_Breakout": "No Breakout",
             "InsiderSentiment": 0,
             "InsiderTag": "No Insider Data \u2754",
-            "NewsSentiment": 0.18392857142857144,
-            "ManagementTrustScore": 55,
-            "OptionCallVolume": 39887,
-            "OptionPutVolume": 19233,
-            "PCR": 0.48,
+            "NewsSentiment": 0.270496632996633,
+            "ManagementTrustScore": 85,
+            "OptionCallVolume": 12324,
+            "OptionPutVolume": 4539,
+            "PCR": 0.37,
             "OptionScore": 80
         },
         "extra": [
-            "Volatility: 0.0259"
+            "Volatility: 0.0452"
         ]
     },
     {
@@ -333,6 +318,13 @@
     },
     {
         "ticker": "NSDL.NS",
+        "signal": null,
+        "confidence": null,
+        "indicators": null,
+        "extra": null
+    },
+    {
+        "ticker": "VEDL.NS",
         "signal": null,
         "confidence": null,
         "indicators": null,

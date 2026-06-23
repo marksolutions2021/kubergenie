@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("signals/GenieSignals.csv")
+df = pd.read_csv("kubergenie/signals/GenieSignals.csv")
 first_stock = df.iloc[0]['Stock']
 fake_entry = {
     'Stock': first_stock,
@@ -18,5 +18,5 @@ fake_entry = {
 
 # Insert BUY row at top
 df = pd.concat([pd.DataFrame([fake_entry]), df], ignore_index=True)
-df.to_csv("signals/GenieSignals.csv", index=False)
+df.to_csv("kubergenie/signals/GenieSignals.csv", index=False)
 print("✅ GenieSignals patched with fake BUY to trigger backtest.")

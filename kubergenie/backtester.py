@@ -3,7 +3,7 @@ import os
 
 
 def run_backtest_v2(
-        signal_data_path="signals/GenieSignals.csv",
+        signal_data_path="kubergenie/signals/GenieSignals.csv",
         output_path="results/backtest_v2.csv"):
 
     if not os.path.exists(signal_data_path):

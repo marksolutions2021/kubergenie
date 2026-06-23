@@ -1,0 +1,7 @@
+Stock,Signal,RSI,MACD,Date,confidence,Insider,OptionScore,ManagementTrustScore,Rank
+ITC.NS,HOLD,0.0,0.0,2025-07-18,0.0,Unknown,50,60,2
+ZEEL.NS,HOLD,0.0,0.0,2025-07-18,0.0,Unknown,50,60,2
+INFY.NS,NoPattern,0.0,0.0,,0.0,Unknown,50,60,99
+RELIANCE.NS,,,,2025-08-08,,Unknown,50,60,99
+TCS.NS,,,,2025-08-08,,Unknown,50,60,99
+WIPRO.NS,,,,2025-08-08,,Unknown,50,60,99

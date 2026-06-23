@@ -142,7 +142,11 @@ def leaderboard():
         data = []
 
     # Optional: Sort leaderboard by confidence descending
-    sorted_data = sorted(data, key=lambda x: x.get('confidence', 0), reverse=True)
+    sorted_data = sorted(
+    data,
+    key=lambda x: float(x.get("confidence") or 0),
+    reverse=True
+)
 
 
     return render_template('leaderboard.html', leaderboard=sorted_data)

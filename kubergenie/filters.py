@@ -9,7 +9,7 @@ BASE_SIGNALS_DIR = os.path.join(os.path.dirname(__file__), "..", "signals")
 
 def save_signal_report(ticker, indicators, output_dir=BASE_DATA_DIR):
     os.makedirs(output_dir, exist_ok=True)
-    filename = os.path.join(output_dir, f"{ticker.replace('.', '_')}_indicators.csv")
+    filename = os.path.join(output_dir, f"{ticker.replace('.', '_')}_analysis.csv")
 
     row = {
         "Date": datetime.today().strftime("%Y-%m-%d"),
