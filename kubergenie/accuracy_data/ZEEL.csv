@@ -1,0 +1,6 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,45,,,ZEEL.NS,52.58,-0.88,,,,No Risks,,,Neutral
+,SELL,40,,,ZEEL.NS,38.14,-2.2,,,,No Risks,,,Neutral
+,SELL,50,,,ZEEL.NS,38.14,-2.2,,,,No Risks,,,Neutral
+,BUY,80,,,ZEEL.NS,66.11,0.48,,,,No Risks,,,Neutral
+,BUY,80,,,ZEEL.NS,66.11,0.48,,,,No Risks,,,Neutral

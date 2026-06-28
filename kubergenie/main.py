@@ -8,11 +8,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from kubergenie.analyzer import analyze_stock
 from kubergenie.pipeline import run_genie_pipeline  # optional
-from kubergenie.accuracy_chart import plot_accuracy  # optional
+from kubergenie.accuracy_chart import plot_accuracy_chart  # optional
 
 # These two functions must match app.py behaviour
 from kubergenie.filters import append_smart_signal
-from kubergenie.leaderboard import update_leaderboard_entry
+from kubergenie.leaderboard import update_leaderboard
 
 
 # ---------------- CONFIG ----------------
@@ -75,6 +75,9 @@ def save_to_csv(result):
     df.to_csv(CSV_PATH, index=False)
     print("💾 Saved to GenieSignals.csv")
 
+    ticker = result.get("ticker")
+    plot_accuracy_chart(ticker, ticker)
+    print(f"📈 Accuracy chart updated for {ticker}")
 
 if __name__ == "__main__":
     welcome()
@@ -92,7 +95,7 @@ if __name__ == "__main__":
         print_debug_output(result)
 
         # 🏆 Leaderboard update
-        update_leaderboard_entry(result)
+        update_leaderboard()
 
         # 📥 Save to CSV
         save_to_csv(result)

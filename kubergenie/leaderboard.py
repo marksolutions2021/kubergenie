@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(__file__)
-DATA_DIR = os.path.join(BASE_DIR, "data")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 RESULTS_DIR = os.path.join(BASE_DIR, "results")
 
 

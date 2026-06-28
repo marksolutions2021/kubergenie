@@ -37,8 +37,13 @@ def fetch_news_and_analyze_sentiment(ticker):
         avg_sentiment = sum(sentiments) / len(sentiments)
 
     # Save to CSV (optional)
-    os.makedirs("results", exist_ok=True)
-    news_file = f"results/news_sentiment_{datetime.now().strftime('%Y-%m-%d')}.csv"
+    RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+
+    news_file = os.path.join(
+    RESULTS_DIR,
+    f"news_sentiment_{datetime.now().strftime('%Y-%m-%d')}.csv"
+    )
     df = pd.DataFrame({
         "Ticker": [ticker]*len(headlines),
         "Headline": headlines,

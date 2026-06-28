@@ -1,0 +1,17 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,40,,,WIPRO.NS,56.23,-0.84,,,,['Volatility: 0.0143'],,,Neutral
+,SELL,40,,,WIPRO.NS,56.23,-0.84,,,,No Risks,,,Neutral
+,SELL,50,,,WIPRO.NS,46.33,-0.98,,,,No Risks,,,Neutral
+,SELL,35,,,WIPRO.NS,46.33,-0.98,,,,No Risks,,,Neutral
+,BUY,65,,,WIPRO.NS,52.87,0.71,,,,No Risks,,,Neutral
+,SELL,40,,,WIPRO.NS,29.34,-2.63,,,,No Risks,,,Neutral
+,SELL,55,,,WIPRO.NS,35.92,-1.04,,,,No Risks,,,Neutral
+,SELL,50,,,WIPRO.NS,35.92,-1.04,,,,No Risks,,,Neutral
+,SELL,45,,,WIPRO.NS,35.92,-1.04,,,,No Risks,,,Neutral
+,SELL,50,,,WIPRO.NS,35.92,-1.04,,,,No Risks,,,Neutral
+,SELL,50,,,WIPRO.NS,30.7,-1.0,,,,No Risks,,,Neutral
+,SELL,50,,,WIPRO.NS,30.14,-1.05,,,,No Risks,,,Neutral
+,SELL,45,,,WIPRO.NS,30.14,-1.05,,,,No Risks,,,Neutral
+,SELL,55,,,WIPRO.NS,30.14,-1.05,,,,No Risks,,,Neutral
+,SELL,45,,,WIPRO.NS,30.11,-0.98,,,,,,,Neutral
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,,,,Neutral

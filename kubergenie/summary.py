@@ -4,6 +4,9 @@ import pandas as pd
 from datetime import datetime
 import os
 
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
+
 def create_summary_row(ticker, signal, indicators, confidence):
     sentiment_value = indicators.get("NewsSentiment", 0)
     insider_sentiment = indicators.get("InsiderTag", "Unknown")
@@ -93,8 +96,10 @@ def save_daily_summary(summary_rows):
     today = datetime.now().strftime("%Y-%m-%d")
     df = pd.DataFrame(summary_rows)
     
-    os.makedirs("results", exist_ok=True)
-    summary_file = f"results/daily_summary_{today}.csv"
+    summary_file = os.path.join(
+        RESULTS_DIR,
+        f"daily_summary_{today}.csv"
+    )
     df.to_csv(summary_file, index=False)
     print(f"✅ Daily summary saved to {summary_file}")
 

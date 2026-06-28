@@ -1,0 +1,5 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,40,,,RELIANCE.NS,47.79,-8.3,,,,['Volatility: 0.0086'],,,Neutral
+,SELL,45,,,RELIANCE.NS,47.79,-8.3,,,,No Risks,,,Neutral
+,BUY,75,,,RELIANCE.NS,50.39,5.09,,,,,,,Neutral
+,SELL,45,,,RELIANCE.NS,49.63,4.93,,,,,,,Neutral

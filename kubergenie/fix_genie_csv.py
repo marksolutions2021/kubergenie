@@ -1,6 +1,9 @@
 import pandas as pd
 
-file_path = "results/genie_signals.csv"
+import os
+
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+file_path = os.path.join(RESULTS_DIR, "genie_signals.csv")
 df = pd.read_csv(file_path)
 
 # 🔍 Show raw columns to check hidden characters

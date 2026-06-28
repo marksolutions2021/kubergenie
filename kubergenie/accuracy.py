@@ -3,6 +3,8 @@ import os
 import matplotlib.pyplot as plt
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
 
 data_folder = os.path.join(BASE_DIR, "kubergenie", "data")
 signals_folder = os.path.join(BASE_DIR, "kubergenie", "signals")
@@ -21,8 +23,10 @@ if os.path.exists("signals"):
 else:
     print("❌ Signals folder not found")
 
-
-def classify_accuracy(backtest_path="results/backtest_v2.csv", output_path="results/accuracy_results.csv"):
+def classify_accuracy(
+    backtest_path=os.path.join(RESULTS_DIR, "backtest_v2.csv"),
+    output_path=os.path.join(RESULTS_DIR, "accuracy_results.csv")
+):
     if not os.path.exists(backtest_path):
         print("⚠️ No backtest results found.")
         return
@@ -51,7 +55,9 @@ def classify_accuracy(backtest_path="results/backtest_v2.csv", output_path="resu
     print(f"🎯 Accuracy: {correct_pct}% Correct, {wrong_pct}% Wrong")
 
 
-def plot_accuracy(accuracy_path="results/accuracy_results.csv"):
+def plot_accuracy(
+    accuracy_path=os.path.join(RESULTS_DIR, "accuracy_results.csv")
+):
     if not os.path.exists(accuracy_path):
         print("⚠️ No accuracy results found.")
         return
@@ -70,7 +76,7 @@ def plot_accuracy(accuracy_path="results/accuracy_results.csv"):
     plt.ylabel('Count')
     plt.xticks(rotation=0)
     plt.tight_layout()
-    plt.savefig("results/accuracy_chart.png")
+    plt.savefig(os.path.join(RESULTS_DIR, "accuracy_chart.png"))
     plt.show()
 
 
@@ -104,19 +110,41 @@ def clean_genie_signals(file_path="kubergenie/signals/GenieSignals.csv"):
 
 # ✅ FIX: Add missing update_accuracy_data function
 def update_accuracy_data(signals_file="kubergenie/signals/GenieSignals.csv", actual_outcome=None):
-    """Append actual outcome to GenieSignals file for accuracy tracking."""
+    """
+    Generate one accuracy CSV per stock from GenieSignals.csv.
+    """
+
     if not os.path.exists(signals_file):
-        print(f"⚠ Signals file not found: {signals_file}")
+        print(f"Signals file not found: {signals_file}")
         return
-    
+
     df = pd.read_csv(signals_file)
-    
-    if 'ActualOutcome' not in df.columns:
-        df['ActualOutcome'] = None
-    
-    if not df.empty:
-        df.loc[df.index[-1], 'ActualOutcome'] = actual_outcome
-        df.to_csv(signals_file, index=False)
-        print(f"✅ Accuracy data updated for last signal → {actual_outcome}")
-    else:
-        print("⚠ No signals found to update.")
+
+    if df.empty:
+        print("No signals found.")
+        return
+
+    # Use whichever column actually contains the stock symbol
+    stock_col = "Ticker" if "Ticker" in df.columns else "Stock"
+
+    accuracy_dir = os.path.join("kubergenie", "accuracy_data")
+    os.makedirs(accuracy_dir, exist_ok=True)
+
+    for stock in df[stock_col].dropna().unique():
+
+        stock_df = df[df[stock_col] == stock].copy()
+
+        if actual_outcome is not None:
+            stock_df["Outcome"] = actual_outcome
+        elif "ActualOutcome" in stock_df.columns:
+            stock_df["Outcome"] = stock_df["ActualOutcome"]
+        else:
+            stock_df["Outcome"] = "Neutral"
+
+        outfile = os.path.join(
+            accuracy_dir,
+            f"{stock.replace('.NS','').upper()}.csv"
+        )
+
+        stock_df.to_csv(outfile, index=False)
+        print(f"Created: {outfile}")

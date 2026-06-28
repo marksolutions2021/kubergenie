@@ -1,0 +1,5 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,40,,,INFY.NS,46.71,-6.2,,,,['Volatility: 0.0104'],,,Neutral
+,SELL,30,,,INFY.NS,46.71,-6.2,,,,No Risks,,,Neutral
+,SELL,45,,,INFY.NS,46.71,-6.2,,,,No Risks,,,Neutral
+,SELL,50,,,INFY.NS,36.76,-10.37,,,,No Risks,,,Neutral

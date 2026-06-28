@@ -1,11 +1,25 @@
 [
     {
         "ticker": "WIPRO.NS",
-        "signal": null,
-        "confidence": 0,
-        "indicators": {},
-        "risks": {},
-        "status": "Error: save_signal_report() got multiple values for argument 'output_dir'"
+        "signal": "SELL",
+        "confidence": 55,
+        "indicators": {
+            "RSI": 31.2,
+            "MACD": -0.94,
+            "PatternSignal": "NoPattern",
+            "SR_Breakout": "No Breakout",
+            "InsiderSentiment": 5,
+            "InsiderTag": "Insider Buying \ud83d\udcb0",
+            "NewsSentiment": 0.030858585858585853,
+            "ManagementTrustScore": 100,
+            "OptionCallVolume": 23850,
+            "OptionPutVolume": 12693,
+            "PCR": 0.53,
+            "OptionScore": 80
+        },
+        "extra": [
+            "Volatility: 0.0247"
+        ]
     },
     {
         "ticker": "WIPRO.NS",
@@ -31,10 +45,25 @@
     },
     {
         "ticker": "ITC.NS",
-        "signal": null,
-        "confidence": null,
-        "indicators": null,
-        "extra": null
+        "signal": "BUY",
+        "confidence": 60,
+        "indicators": {
+            "RSI": 50.76,
+            "MACD": 1.06,
+            "PatternSignal": "NoPattern",
+            "SR_Breakout": "No Breakout",
+            "InsiderSentiment": 0,
+            "InsiderTag": "No Insider Data \u2754",
+            "NewsSentiment": 0.04808080808080808,
+            "ManagementTrustScore": 70,
+            "OptionCallVolume": 23223,
+            "OptionPutVolume": 20433,
+            "PCR": 0.88,
+            "OptionScore": 60
+        },
+        "extra": [
+            "Volatility: 0.0066"
+        ]
     },
     {
         "ticker": "WIPRO.NS",
@@ -174,7 +203,7 @@
         "confidence": 0,
         "indicators": {},
         "risks": {},
-        "status": "Error: save_signal_report() got multiple values for argument 'output_dir'"
+        "status": "Error: name 'BASE_DATA_DIR' is not defined"
     },
     {
         "ticker": "WIPRO.NS",
@@ -226,50 +255,50 @@
         "confidence": 0,
         "indicators": {},
         "risks": {},
-        "status": "Error: save_signal_report() got multiple values for argument 'output_dir'"
+        "status": "Error: name 'BASE_DATA_DIR' is not defined"
     },
     {
         "ticker": "INFY.NS",
         "signal": "SELL",
-        "confidence": 45,
+        "confidence": 50,
         "indicators": {
-            "RSI": 46.71,
-            "MACD": -6.2,
-            "PatternSignal": "NoPattern",
+            "RSI": 36.76,
+            "MACD": -10.37,
+            "PatternSignal": "BearishEngulfing",
             "SR_Breakout": "No Breakout",
             "InsiderSentiment": 0,
             "InsiderTag": "Neutral Insider Activity \ud83d\ude10",
-            "NewsSentiment": 0.16666666666666666,
-            "ManagementTrustScore": 55,
-            "OptionCallVolume": 21069,
-            "OptionPutVolume": 10309,
-            "PCR": 0.49,
+            "NewsSentiment": -0.04135582010582011,
+            "ManagementTrustScore": 90,
+            "OptionCallVolume": 44720,
+            "OptionPutVolume": 16853,
+            "PCR": 0.38,
             "OptionScore": 80
         },
         "extra": [
-            "Volatility: 0.0104"
+            "Volatility: 0.0246"
         ]
     },
     {
         "ticker": "ZEEL.NS",
-        "signal": "BUY",
-        "confidence": 80,
+        "signal": "SELL",
+        "confidence": 45,
         "indicators": {
-            "RSI": 66.11,
-            "MACD": 0.48,
-            "PatternSignal": "NoPattern",
+            "RSI": 59.47,
+            "MACD": -0.06,
+            "PatternSignal": "BearishEngulfing",
             "SR_Breakout": "No Breakout",
             "InsiderSentiment": 0,
             "InsiderTag": "No Insider Data \u2754",
-            "NewsSentiment": 0.270496632996633,
-            "ManagementTrustScore": 85,
-            "OptionCallVolume": 12324,
-            "OptionPutVolume": 4539,
-            "PCR": 0.37,
+            "NewsSentiment": 0.15476190476190474,
+            "ManagementTrustScore": 60,
+            "OptionCallVolume": 32773,
+            "OptionPutVolume": 19100,
+            "PCR": 0.58,
             "OptionScore": 80
         },
         "extra": [
-            "Volatility: 0.0452"
+            "Volatility: 0.0332"
         ]
     },
     {
@@ -325,9 +354,24 @@
     },
     {
         "ticker": "VEDL.NS",
-        "signal": null,
-        "confidence": null,
-        "indicators": null,
-        "extra": null
+        "signal": "SELL",
+        "confidence": 40,
+        "indicators": {
+            "RSI": 27.45,
+            "MACD": 3.44,
+            "PatternSignal": "NoPattern",
+            "SR_Breakout": "No Breakout",
+            "InsiderSentiment": 0,
+            "InsiderTag": "No Insider Data \u2754",
+            "NewsSentiment": 0.10803571428571429,
+            "ManagementTrustScore": 50,
+            "OptionCallVolume": 11749,
+            "OptionPutVolume": 19052,
+            "PCR": 1.62,
+            "OptionScore": 40
+        },
+        "extra": [
+            "Volatility: 0.0275"
+        ]
     }
 ]

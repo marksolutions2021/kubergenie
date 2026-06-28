@@ -1,0 +1,5 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,50,,,TCS.NS,27.27,-20.68,,,,['Volatility: 0.0101'],,,Neutral
+,SELL,40,,,TCS.NS,27.27,-20.68,,,,No Risks,,,Neutral
+,SELL,45,,,TCS.NS,40.42,-2.64,,,,,,,Neutral
+,SELL,30,,,TCS.NS,37.84,-4.26,,,,,,,Neutral

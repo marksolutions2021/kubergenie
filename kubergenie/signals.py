@@ -3,7 +3,7 @@ import pandas as pd
 
 BASE_DIR = os.path.dirname(__file__)
 SIGNALS_DIR = os.path.join(BASE_DIR, "signals")
-DATA_DIR = os.path.join(BASE_DIR, "data")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
 os.makedirs(SIGNALS_DIR, exist_ok=True)
 os.makedirs(DATA_DIR, exist_ok=True)

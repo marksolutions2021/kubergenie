@@ -1,0 +1,3 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,45,,,CDSL.NS,27.37,-29.98,,,,No Risks,,,Neutral
+,SELL,45,,,CDSL.NS,39.88,-12.28,,,,No Risks,,,Neutral

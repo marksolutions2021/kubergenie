@@ -1,0 +1,9 @@
+Stock,Signal,Confidence,Date,Price,Ticker,RSI,MACD,Pattern,Insider,News,Risks,GenieSignal,GenieConfidence,Outcome
+,SELL,50,,,ITC.NS,37.08,-0.64,,,,No Risks,,,Neutral
+,SELL,30,,,ITC.NS,37.08,-0.64,,,,No Risks,,,Neutral
+,SELL,35,,,ITC.NS,51.69,-0.42,,,,No Risks,,,Neutral
+,BUY,55,,,ITC.NS,55.15,1.57,,,,No Risks,,,Neutral
+,BUY,65,,,ITC.NS,55.15,1.57,,,,No Risks,,,Neutral
+,BUY,65,,,ITC.NS,55.15,1.57,,,,No Risks,,,Neutral
+,BUY,55,,,ITC.NS,55.15,1.57,,,,No Risks,,,Neutral
+,BUY,70,,,ITC.NS,52.13,1.11,,,,No Risks,,,Neutral

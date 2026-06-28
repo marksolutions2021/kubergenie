@@ -1,3 +1,6 @@
+import os
+
+BASE_DIR = os.path.dirname(__file__)
 import yfinance as yf
 import pandas as pd
 import traceback

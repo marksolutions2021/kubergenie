@@ -1,10 +1,14 @@
 import os
+
+BASE_DIR = os.path.dirname(__file__)
+DATA_DIR = os.path.join(BASE_DIR, "data")
+SIGNALS_DIR = os.path.join(BASE_DIR, "signals")
+RESULTS_DIR = os.path.join(BASE_DIR, "results")
 from kubergenie.analyzer import fetch_stock_data
 from kubergenie.filters import apply_smart_filter, save_signal_report, append_smart_signal
 from kubergenie.accuracy import update_accuracy_data
 from kubergenie.leaderboard import generate_leaderboard_data  # Changed here
 
-BASE_DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 
 def run_genie_pipeline(stock_list, period="6mo", interval="1d"):
     results = []
@@ -28,8 +32,8 @@ def run_genie_pipeline(stock_list, period="6mo", interval="1d"):
             smart_decision, confidence = apply_smart_filter(indicators, risks)
 
             # Save outputs
-            save_signal_report(ticker, signal, indicators, output_dir=BASE_DATA_DIR)
-            append_smart_signal(ticker, signal, confidence, output_dir=BASE_DATA_DIR)
+            save_signal_report(ticker, indicators, output_dir=BASE_DATA_DIR)
+            append_smart_signal(ticker, signal, confidence)
 
             # Update accuracy & leaderboard
             update_accuracy_data(output_dir=BASE_DATA_DIR)

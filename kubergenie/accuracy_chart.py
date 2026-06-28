@@ -1,8 +1,12 @@
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
+
 import matplotlib.pyplot as plt
 import os
 
-CHART_FOLDER = os.path.join("static", "charts")
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CHART_FOLDER = os.path.join(PROJECT_ROOT, "static", "charts")
 os.makedirs(CHART_FOLDER, exist_ok=True)
 
 def plot_accuracy_chart(input_data, stock_name):

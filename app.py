@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from kubergenie.pipeline import run_genie_pipeline
 from kubergenie.analyzer import analyze_stock
-from kubergenie.accuracy_chart import plot_accuracy_from_csv
+from kubergenie.accuracy_chart import plot_accuracy_chart
 import json
 import os
 import pandas as pd
@@ -156,17 +156,16 @@ def leaderboard():
 @app.route('/accuracy_chart/<stock>')
 def accuracy_chart(stock):
     try:
-        # Generate accuracy chart dynamically
-        plot_accuracy_from_csv(stock)
+        filename = plot_accuracy_chart(stock + ".NS", stock + ".NS")
 
-        # Check if chart was created
-        filename = f"accuracy_{stock}.png"
-        file_path = os.path.join('static/charts', filename)
-
-        if not os.path.exists(file_path):
+        if filename is None:
             return f"Chart could not be generated for {stock}"
 
-        return render_template('charts.html', stock=stock, chart_file=filename)
+        return render_template(
+            "charts.html",
+            stock=stock,
+            chart_file=filename
+        )
 
     except Exception as e:
         return f"Error generating accuracy chart for {stock}: {str(e)}"

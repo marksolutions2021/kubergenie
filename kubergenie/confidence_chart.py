@@ -6,7 +6,8 @@ def plot_genie_confidence(stocks):
     confidences = {}
     
     for ticker in stocks:
-        file = f"data/{ticker.replace('.', '_')}_indicators.csv"
+        BASE_DIR = os.path.dirname(__file__)
+        file = os.path.join(BASE_DIR, "data", f"{ticker.replace('.', '_')}_indicators.csv")
         if not os.path.exists(file):
             continue
         df = pd.read_csv(file)
@@ -34,8 +35,11 @@ def plot_genie_confidence(stocks):
     plt.xlim(0, 100)
     plt.grid(axis='x', linestyle='--', alpha=0.4)
 
-    os.makedirs("charts", exist_ok=True)
-    file_path = "charts/genie_confidence.png"
+    BASE_DIR = os.path.dirname(__file__)
+    CHART_FOLDER = os.path.join(BASE_DIR, "static", "charts")
+    os.makedirs(CHART_FOLDER, exist_ok=True)
+
+    file_path = os.path.join(CHART_FOLDER, "genie_confidence.png")
     plt.tight_layout()
     plt.savefig(file_path)
     plt.close()

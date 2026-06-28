@@ -192,3 +192,65 @@ RELIANCE.NS,SELL,50.0,2026-06-23,1315.8,,,,,,,,,
 WIPRO.NS,,,2026-06-23,174.49,,30.14,-1.05,BearishEngulfing,Insider Buying 💰,-0.064,Volatility: 0.0251,SELL,55.0
 TCS.NS,,,2026-06-23,2059.6,,32.32,-5.25,BearishEngulfing,Insider Selling ⚠️,0.0015,Volatility: 0.0160,SELL,40.0
 RELIANCE.NS,,,2026-06-23,1309.5,,47.04,5.66,BearishEngulfing,Insider Buying 💰,0.0503,Volatility: 0.0129,SELL,55.0
+,SELL,55,,,WIPRO.NS,30.14,-1.05,,,,No Risks,,
+,BUY,80,,,ZEEL.NS,66.11,0.48,,,,No Risks,,
+WIPRO.NS,,,2026-06-23,174.49,,30.14,-1.05,BearishEngulfing,Insider Buying 💰,-0.064,Volatility: 0.0251,SELL,55.0
+TCS.NS,,,2026-06-23,2059.6,,32.32,-5.25,BearishEngulfing,Insider Selling ⚠️,-0.0264,Volatility: 0.0160,SELL,40.0
+RELIANCE.NS,,,2026-06-23,1309.5,,47.04,5.66,BearishEngulfing,Insider Buying 💰,0.0639,Volatility: 0.0129,SELL,35.0
+WIPRO.NS,,,2026-06-24,173.1,,29.02,-1.15,NoPattern,Insider Buying 💰,0.0156,Volatility: 0.0249,SELL,45.0
+TCS.NS,,,2026-06-24,2095.6,,37.33,-5.35,BullishEngulfing,Insider Selling ⚠️,0.0349,Volatility: 0.0172,SELL,40.0
+RELIANCE.NS,,,2026-06-24,1312.7,,47.99,5.07,NoPattern,Insider Buying 💰,0.0415,Volatility: 0.0127,SELL,50.0
+WIPRO.NS,,,2026-06-24,172.33,,28.44,-1.2,NoPattern,Insider Buying 💰,0.0156,Volatility: 0.0248,SELL,50.0
+TCS.NS,,,2026-06-24,2093.6,,37.07,-5.48,BullishEngulfing,Insider Selling ⚠️,0.0349,Volatility: 0.0171,SELL,25.0
+RELIANCE.NS,,,2026-06-24,1312.4,,47.9,5.05,NoPattern,Insider Buying 💰,0.0415,Volatility: 0.0127,SELL,50.0
+WIPRO.NS,,,2026-06-24,172.44,,28.52,-1.2,NoPattern,Insider Buying 💰,0.0156,Volatility: 0.0248,SELL,50.0
+TCS.NS,,,2026-06-24,2094.4,,37.17,-5.43,BullishEngulfing,Insider Selling ⚠️,0.0349,Volatility: 0.0171,SELL,40.0
+RELIANCE.NS,,,2026-06-24,1311.5,,47.64,4.99,NoPattern,Insider Buying 💰,0.0415,Volatility: 0.0127,SELL,40.0
+,SELL,35,,,VEDL.NS,27.41,3.43,,,,No Risks,,
+WIPRO.NS,,,2026-06-25,174.96,,31.11,-0.95,NoPattern,Insider Buying 💰,0.06,Volatility: 0.0247,SELL,50.0
+TCS.NS,,,2026-06-25,2127.9,,41.39,-2.14,NoPattern,Insider Selling ⚠️,0.0676,Volatility: 0.0177,SELL,40.0
+RELIANCE.NS,,,2026-06-25,1320.0,,50.18,5.05,NoPattern,Insider Buying 💰,0.1623,Volatility: 0.0126,BUY,70.0
+WIPRO.NS,,,2026-06-25,175.05,,31.3,-0.94,NoPattern,Insider Buying 💰,0.06,Volatility: 0.0247,SELL,50.0
+TCS.NS,,,2026-06-25,2127.5,,41.34,-2.16,NoPattern,Insider Selling ⚠️,0.0676,Volatility: 0.0177,SELL,35.0
+RELIANCE.NS,,,2026-06-25,1322.9,,51.01,5.23,NoPattern,Insider Buying 💰,0.1623,Volatility: 0.0127,BUY,70.0
+WIPRO.NS,,,2026-06-25,175.05,,31.3,-0.94,NoPattern,Insider Buying 💰,0.06,Volatility: 0.0247,SELL,50.0
+TCS.NS,,,2026-06-25,2127.5,,41.34,-2.16,NoPattern,Insider Selling ⚠️,0.0676,Volatility: 0.0177,SELL,25.0
+RELIANCE.NS,,,2026-06-25,1322.9,,51.01,5.23,NoPattern,Insider Buying 💰,0.1623,Volatility: 0.0127,BUY,65.0
+,SELL,45,,,WIPRO.NS,30.11,-0.98,,,,,,
+,SELL,45,,,TCS.NS,40.42,-2.64,,,,,,
+,BUY,75,,,RELIANCE.NS,50.39,5.09,,,,,,
+WIPRO.NS,,,2026-06-25,174.6,,30.38,-0.97,NoPattern,Insider Buying 💰,0.05,Volatility: 0.0246,SELL,55.0
+,BUY,70,,,ITC.NS,52.13,1.11,,,,No Risks,,
+,SELL,50,,,INFY.NS,36.76,-10.37,,,,No Risks,,
+,SELL,40,,,VEDL.NS,27.45,3.44,,,,No Risks,,
+WIPRO.NS,,,2026-06-25,174.66,,30.5,-0.97,NoPattern,Insider Buying 💰,0.05,Volatility: 0.0246,SELL,40.0
+TCS.NS,,,2026-06-25,2122.5,,40.73,-2.48,NoPattern,Insider Selling ⚠️,0.0676,Volatility: 0.0176,SELL,40.0
+RELIANCE.NS,,,2026-06-25,1321.9,,50.73,5.17,NoPattern,Insider Buying 💰,0.1705,Volatility: 0.0126,BUY,75.0
+WIPRO.NS,,,2026-06-25,174.7,,30.59,-0.96,NoPattern,Insider Buying 💰,0.05,Volatility: 0.0246,SELL,55.0
+TCS.NS,,,2026-06-25,2123.4,,40.84,-2.43,NoPattern,Insider Selling ⚠️,0.0676,Volatility: 0.0176,SELL,30.0
+RELIANCE.NS,,,2026-06-25,1321.9,,50.73,5.17,NoPattern,Insider Buying 💰,0.1705,Volatility: 0.0126,BUY,65.0
+WIPRO.NS,,,2026-06-25,174.67,,30.52,-0.96,NoPattern,Insider Buying 💰,0.05,Volatility: 0.0246,SELL,50.0
+TCS.NS,,,2026-06-25,2123.3,,40.83,-2.43,NoPattern,Insider Selling ⚠️,0.0676,Volatility: 0.0176,SELL,25.0
+RELIANCE.NS,,,2026-06-25,1322.0,,50.76,5.17,NoPattern,Insider Buying 💰,0.1705,Volatility: 0.0126,BUY,70.0
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,,,
+,SELL,30,,,TCS.NS,37.84,-4.26,,,,,,
+,SELL,45,,,RELIANCE.NS,49.63,4.93,,,,,,
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,,,
+,SELL,40,,,TCS.NS,37.84,-4.26,,,,,,
+,SELL,55,,,RELIANCE.NS,49.63,4.93,,,,,,
+,SELL,55,,,WIPRO.NS,31.2,-0.94,,,,,,
+,SELL,40,,,TCS.NS,37.84,-4.26,,,,,,
+,SELL,40,,,RELIANCE.NS,49.63,4.93,,,,,,
+,SELL,55,,,WIPRO.NS,31.2,-0.94,,,,,,
+,SELL,40,,,TCS.NS,37.84,-4.26,,,,,,
+,SELL,40,,,RELIANCE.NS,49.63,4.93,,,,,,
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,No Risks,,
+WIPRO.NS,,,2026-06-25,175.0,,31.2,-0.94,NoPattern,Insider Buying 💰,0.0409,Volatility: 0.0247,SELL,45.0
+TCS.NS,,,2026-06-25,2094.7,,37.84,-4.26,BearishEngulfing,Insider Selling ⚠️,0.065,Volatility: 0.0174,SELL,40.0
+RELIANCE.NS,,,2026-06-25,1318.1,,49.63,4.93,Doji,Insider Buying 💰,0.1824,Volatility: 0.0126,SELL,45.0
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,No Risks,,
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,No Risks,,
+,SELL,50,,,WIPRO.NS,31.2,-0.94,,,,No Risks,,
+,SELL,55,,,WIPRO.NS,31.2,-0.94,,,,No Risks,,
+,BUY,60,,,ITC.NS,50.76,1.06,,,,No Risks,,
+,SELL,45,,,ZEEL.NS,59.47,-0.06,N/A,N/A,N/A,No Risks,,

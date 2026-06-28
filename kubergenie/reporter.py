@@ -5,12 +5,18 @@ import os
 from datetime import datetime
 import pandas as pd
 
+RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
+os.makedirs(RESULTS_DIR, exist_ok=True)
+
 # ✅ Signal report saving function
 def save_signal_report(ticker, signal, indicators):
     date = datetime.now().strftime("%Y-%m-%d")
-    filename = f"results/genie_signal_report_{date}.csv"
+    filename = os.path.join(
+        RESULTS_DIR,
+        f"genie_signal_report_{date}.csv"
+    )
 
-    os.makedirs("results", exist_ok=True)
+    
     file_exists = os.path.isfile(filename)
 
     with open(filename, mode='a', newline='', encoding='utf-8') as f:
@@ -33,7 +39,9 @@ def save_signal_report(ticker, signal, indicators):
         ])
 
 # ✅ Accuracy export function
-def export_accuracy_to_csv(score_data, filename="results/genie_accuracy_log.csv"):
-    os.makedirs("results", exist_ok=True)
+def export_accuracy_to_csv(
+    score_data,
+    filename=os.path.join(RESULTS_DIR, "genie_accuracy_log.csv")
+):
     df = pd.DataFrame(score_data)
     df.to_csv(filename, index=False)

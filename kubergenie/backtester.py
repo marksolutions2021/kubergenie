@@ -1,10 +1,12 @@
 import pandas as pd
 import os
 
+BASE_DIR = os.path.dirname(__file__)
+
 
 def run_backtest_v2(
-        signal_data_path="kubergenie/signals/GenieSignals.csv",
-        output_path="results/backtest_v2.csv"):
+        signal_data_path=os.path.join(BASE_DIR, "signals", "GenieSignals.csv"),
+        output_path=os.path.join(BASE_DIR, "results", "backtest_v2.csv")):
 
     if not os.path.exists(signal_data_path):
         print("⚠️ No signal data found.")
@@ -18,24 +20,34 @@ def run_backtest_v2(
 
     print(f"📂 Found signal file: {signal_data_path}")
 
+    # Use GenieSignal if Signal is missing
+    if 'GenieSignal' in df.columns and 'Signal' in df.columns:
+        df['Signal'] = df['Signal'].fillna(df['GenieSignal'])
+
+    # Use GenieConfidence if Confidence is missing
+    if 'GenieConfidence' in df.columns and 'Confidence' in df.columns:
+        df['Confidence'] = df['Confidence'].fillna(df['GenieConfidence'])
+
     # Remove rows with missing required columns
-    df.dropna(subset=['Stock', 'Signal', 'Confidence', 'Date', 'Price'], inplace=True)
+    df.dropna(
+        subset=['Stock', 'Signal', 'Confidence', 'Date', 'Price'],
+        inplace=True
+    )
 
     # Remove duplicates
     df = df.drop_duplicates()
 
     # Convert Date
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
-    df = df.dropna(subset=['Date'])
+    df.dropna(subset=['Date'], inplace=True)
 
     # Clean Signal values
     df['Signal'] = df['Signal'].astype(str).str.strip().str.upper()
 
-    # Convert numeric columns
+    # Numeric conversion
     df['Confidence'] = pd.to_numeric(df['Confidence'], errors='coerce')
     df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
 
-    # Drop bad rows
     df.dropna(subset=['Confidence', 'Price'], inplace=True)
 
     if df.empty:
@@ -65,12 +77,14 @@ def run_backtest_v2(
             price = float(row['Price'])
             date = pd.to_datetime(row['Date'])
 
-            try:
-                confidence = int(row.get('GenieConfidence', row.get('Confidence', 0)))
-            except:
-                confidence = 0
+            genie_conf = row.get('GenieConfidence')
 
-            # BUY Entry
+            if pd.notna(genie_conf):
+                confidence = int(genie_conf)
+            else:
+                confidence = int(row.get('Confidence', 0))
+
+            # BUY entry
             if not in_position and signal == "BUY" and confidence >= 60:
 
                 entry_price = price
@@ -79,16 +93,21 @@ def run_backtest_v2(
                 in_position = True
 
                 print(
-                    f"✅ BUY {stock} | {entry_date.date()} | Price={entry_price} | Confidence={entry_confidence}"
+                    f"✅ BUY {stock} | {entry_date.date()} | "
+                    f"Price={entry_price} | Confidence={entry_confidence}"
                 )
 
-            # SELL Exit
-            elif in_position and (signal == "SELL" or idx == stock_df.index[-1]):
+            # SELL exit
+            elif in_position and (
+                    signal == "SELL" or idx == stock_df.index[-1]):
 
                 exit_price = price
                 exit_date = date
 
-                profit_pct = ((exit_price - entry_price) / entry_price) * 100
+                profit_pct = (
+                    (exit_price - entry_price) / entry_price
+                ) * 100
+
                 duration = (exit_date - entry_date).days
 
                 if profit_pct > 0:
@@ -97,7 +116,8 @@ def run_backtest_v2(
                     outcome = "LOSS"
 
                 print(
-                    f"❌ SELL {stock} | {exit_date.date()} | Profit={round(profit_pct,2)}%"
+                    f"❌ SELL {stock} | {exit_date.date()} | "
+                    f"Profit={round(profit_pct, 2)}%"
                 )
 
                 backtest_results.append({
@@ -127,3 +147,7 @@ def run_backtest_v2(
 
     else:
         print("⚠️ No valid trades found for backtesting.")
+
+
+if __name__ == "__main__":
+    run_backtest_v2()
